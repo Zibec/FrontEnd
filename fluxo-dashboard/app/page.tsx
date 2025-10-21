@@ -13,6 +13,7 @@ import { AddGoalDialog } from "@/components/dashboard/add-goal-dialog"
 
 export default function FluxoDashboard() {
   const [balance, setBalance] = useState(1000)
+  const [patrimony] = useState(15000);
   const [isExpenseDialogOpen, setIsExpenseDialogOpen] = useState(false)
   const [isIncomeDialogOpen, setIsIncomeDialogOpen] = useState(false)
   const [isBudgetDialogOpen, setIsBudgetDialogOpen] = useState(false)
@@ -53,7 +54,10 @@ export default function FluxoDashboard() {
 
   return (
     <div className="min-h-screen bg-neutral-100">
-      <Header balance={balance} onBalanceChange={setBalance} />
+      <Header 
+            balance={balance} onBalanceChange={setBalance} 
+            patrimony={patrimony}   
+      />
 
       <main className="max-w-7xl mx-auto p-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
